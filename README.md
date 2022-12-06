@@ -12,4 +12,4 @@
 ```
 
 # Screenshot
-<img src=".images/app.png" />
+<img src=".image/app.jpg" />
