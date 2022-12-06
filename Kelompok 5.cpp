@@ -24,17 +24,26 @@ int main()
 	cout << endl << endl << endl << endl << endl << endl << endl;
 	int angka, gacha, player = 0;
 	int nyepin, rival = 0;
+	char name[20], nama[20];
 	
 	// angka = angka yang ditebak pemain
 	// gacha = angka yang di acak 
 	// player = berapa kali pemain ke 1 menebak
 	// rival = berapa kali pemain ke 2 menebak
 	
+	system ("CLS");
+	system("color F");
 	srand(time(NULL));
 	gacha = rand() % 5 + 1;
-	system ("CLS");
-	srand(time(NULL));
 	nyepin = rand() % gacha < 6;
+	
+	cout<<"Masukan Nama untuk Player 1 : ";
+	cin.getline(nama, 20);
+	
+	cout<<"Masukan Nama untuk Player 2 : ";
+	cin.getline(name, 20);
+	clear();
+	
 	
 	cout <<"-----------------------------------\n";
 	cout << "\t Roulette Number \n";
@@ -62,10 +71,10 @@ int main()
 		
 	}while(angka != gacha);
 	
-	cout << "\n\t Benar,anda telah menebak sebanyak " << player << " kali";
+	cout << "\n\t Benar," << nama <<" telah menebak sebanyak " << player << " kali";
 	sleep(3);
 	system ("CLS");
-	cout << "\nMohon Tunggu, Giliran Player 2";
+	cout << "\nMohon Tunggu, Giliran Player 2 : " << name;
 	sleep(5);
 	system ("CLS");
 	
@@ -87,16 +96,16 @@ int main()
 		
 	}while(angka != nyepin);
 	
-	cout << "\n\t Benar,anda telah menebak sebanyak " << rival << " kali";
+	cout << "\n\t Benar," << name <<" telah menebak sebanyak " << rival << " kali";
 	sleep(5);
 	system ("CLS");
 	cout << "Pemenangnya adalah : ";
 	sleep(5);
 	
 	if(player < rival){
-		cout << "Player 1 Menang";
+		cout << nama << " Menang";
 	}else if(rival < player){
-	    cout << "Player 2 Menang";
+	    cout << name << " Menang";
     }else if(rival == player && player == rival){
     	cout << "Tidak ada (Seri)";
 	}
