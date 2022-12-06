@@ -42,7 +42,7 @@ int main()
 	
 	cout<<"Masukan Nama untuk Player 2 : ";
 	cin.getline(name, 20);
-	clear();
+	system ("CLS");
 	
 	
 	cout <<"-----------------------------------\n";
