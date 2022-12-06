@@ -2,8 +2,9 @@
 #include<windows.h>
 #include<time.h>
 #include<stdlib.h>
-#include <unistd.h>
-#include <cstdlib>
+#include<unistd.h>
+#include<cstdlib>
+#include<ncurses.h>
 
 using namespace std;
 
@@ -12,10 +13,15 @@ void gotoxy();
 
 int main()
 {
+	
+	initscr();
+	printw("Tekan Enter Untuk Lanjutkan");
+	getch();
+	endwin();
+	
 	system("color A");
 	load();
 	cout << endl << endl << endl << endl << endl << endl << endl;
-	system ("CLS");
 	int angka, gacha, player = 0;
 	int nyepin, rival = 0;
 	
@@ -84,7 +90,7 @@ int main()
 	cout << "\n\t Benar,anda telah menebak sebanyak " << rival << " kali";
 	sleep(5);
 	system ("CLS");
-	cout << "Pemenang nya adalah : ";
+	cout << "Pemenangnya adalah : ";
 	sleep(5);
 	
 	if(player < rival){
@@ -115,5 +121,4 @@ void load()
 		cout << a;
 		sleep(0.5);
 	}sleep(3);
-	system ("CLS");
 }
