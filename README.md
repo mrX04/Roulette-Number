@@ -12,4 +12,4 @@
 ```
 
 # Screenshot
-<img src=".image/app.png" />
+<img src=".image/UpdateVisal.jpg" />
