@@ -1,10 +1,15 @@
+/*  Roulette Number
+- Rio Sulendra | 2257051026
+- Kezia Natalia Wongkar | 2217051034
+- Wayan Santie Arif | 2257051031 */
+
 #include<iostream>
 #include<windows.h>
 #include<time.h>
 #include<stdlib.h>
 #include<unistd.h>
 #include<cstdlib>
-#include<ncurses.h>
+#include<curses.h>
 
 using namespace std;
 
@@ -15,7 +20,10 @@ int main()
 {
 	
 	initscr();
-	printw("Tekan Enter Untuk Lanjutkan");
+	printw("\n\n\t\t\t=========================================\n");
+	printw("\t\t\t=-------| SELAMAT DATANG DI TeKa |------=\n");
+	printw("\t\t\t=========================================\n\n");
+	printw("\t\t\tTekan ENTER untuk melanjutkan...");
 	getch();
 	endwin();
 	
@@ -37,77 +45,72 @@ int main()
 	gacha = rand() % 5 + 1;
 	nyepin = rand() % gacha < 6;
 	
-	cout<<"Masukan Nama untuk Player 1 : ";
+	cout<<"\n\n\t\t\tMasukkan Username\n\n";
+	cout<<"\t\t\tPlayer 1 : ";
 	cin.getline(nama, 20);
-	
-	cout<<"Masukan Nama untuk Player 2 : ";
+	cout<<"\t\t\tPlayer 2 : ";
 	cin.getline(name, 20);
 	system ("CLS");
 	
 	
-	cout <<"-----------------------------------\n";
-	cout << "\t Roulette Number \n";
-	cout << "- Rio Sulendra | 2257051026\n";
-	cout << "- Kezia Natalia Wongkar | 2217051034\n";
-	cout << "- Wayan Santie Arif | 2257051031\n";
-	cout <<"-----------------------------------\n";
-	cout << " Masukan Angka Yang Ingin ditebak 1-5 \n";
+
+	cout << "\n\n\t\t\tTebak Angka 1 sampai 5\n";
 	
 	do{
 		player++;
 		
-		cout << " Player 1 Masukan Angka : ";
+		cout << "\n\t\t\t" << nama << " masukkan tebakan anda : ";
 		cin >> angka;
 		
 		if(angka < gacha){
 			
-			cout << "\n\t Salah,Angka terlalu kecil; \n\n";
+			cout << "\n\t\t\t\tSalah, angka terlalu kecil (Cobalah masukkan angka yang lebih besar)\n\n";
 			
 		}else if(angka > gacha){
 			
-			cout << "\n\t Salah,Angka terlalu besar \n\n";
+			cout << "\n\t\t\t\tSalah, angka terlalu besar (Cobalah masukkan angka yang lebih kecil)\n\n";
 			
 		}
 		
 	}while(angka != gacha);
 	
-	cout << "\n\t Benar," << nama <<" telah menebak sebanyak " << player << " kali";
+	cout << "\n\t\t\t\tSelamat " << nama <<" telah menebak sebanyak " << player << " kali.";
 	sleep(3);
 	system ("CLS");
-	cout << "\nMohon Tunggu, Giliran Player 2 : " << name;
+	cout << "\n\n\t\t\tMohon Tunggu, selanjutnya "<< name <<" yang akan menebak.";
 	sleep(5);
 	system ("CLS");
 	
 	do{
 		rival++;
 		
-		cout << " Player 2 Masukan Angka : ";
+		cout << "\n\n\t\t\t"<< name << " masukkan tebakan anda : ";
 		cin >> angka;
 		
 		if(angka < nyepin){
 			
-			cout << "\n\t Salah,Angka terlalu kecil; \n\n";
+			cout << "\n\t\t\t\tSalah, angka terlalu kecil (Cobalah masukkan angka yang lebih besar)\n\n";
 			
 		}else if(angka > nyepin){
 			
-			cout << "\n\t Salah,Angka terlalu besar \n\n";
+			cout << "\n\t\t\t\tSalah, angka terlalu besar (Cobalah masukkan angka yang lebih kecil)\n\n";
 			
 		}
 		
 	}while(angka != nyepin);
 	
-	cout << "\n\t Benar," << name <<" telah menebak sebanyak " << rival << " kali";
+	cout << "\n\t\t\t\tSelamat " << name <<" telah menebak sebanyak " << rival << " kali.";
 	sleep(5);
 	system ("CLS");
-	cout << "Pemenangnya adalah : ";
+	cout << "\n\n\t\t\tPemenangnya adalah...\n\n";
 	sleep(5);
 	
 	if(player < rival){
-		cout << nama << " Menang";
+		cout << "\t\t\tSelamat " << nama << " telah memenangkan pertandingan.";
 	}else if(rival < player){
-	    cout << name << " Menang";
+	    cout << "\t\t\tSelamat " << name << " telah memenangkan pertandingan.";
     }else if(rival == player && player == rival){
-    	cout << "Tidak ada (Seri)";
+    	cout << "\t\t\tTidak ada, " << nama << " & " << name << " memiliki skor yang sama (Seri).";
 	}
 }
 
@@ -121,9 +124,9 @@ void gotoxy(int x, int y)
 void load()
 {
 	char a = 219;
-	gotoxy(36, 14);
+	gotoxy(36, 4);
 	cout << "Mohon Tunggu..."<< endl;
-	gotoxy(30,16);
+	gotoxy(30, 6);
 	for(int r =1; r<=25; r++)
 	{
 		for(int q=0; q<=10000000; q++);
