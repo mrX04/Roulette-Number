@@ -11,5 +11,5 @@
 - Wayan Santie Arif | 2257051031
 ```
 
-# Screenshot
-<img src=".image/UpdateVisal.jpg" />
+# Preview
+<img src=".image/preview.gif" />
